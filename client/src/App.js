@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AboutPage, HomePage } from "./pages";
+import { AboutPage, HomePage, PageNotFound, UserPage } from "./pages";
 import { Header, Wrapper } from "./components"
+
 
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./styles/global.css"
@@ -15,6 +16,8 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/user/:id?" element={<UserPage />} />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </div>
       </Wrapper>
